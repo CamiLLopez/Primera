@@ -121,15 +121,48 @@
                                     placeholder="Ingrese gastos extra" required>
   
                                 <div class="p-3 col-lg-12"></div>
-                                    <input class="btn btn-xl btn-light col-3 p-2 m-1" type="submit" id="enviar" value="Añadir viaje!">
+                                    <input class="btn btn-xl btn-light col-3 p-2 m-1" type="submit" id="enviar" value="Añadir viaje!" data-bs-toggle="modal" data-bs-target="#envioModal">
                                     <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="reset" id="reset">
-                                    <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="button" id="borrarViajes" value="Borrar viajes">
+                                    <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="button" id="borrarViajes" value="Borrar viajes" data-bs-toggle="modal" data-bs-target="#eliminarViajes">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
     </section>
+  
+  <div class="modal fade" id="envioModal" tabindex="-1" aria-labelledby="formEnviado" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formEnviado">Viaje guardado!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Su viaje se ha guardado con exito!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="eliminarViajes" tabindex="-1" aria-labelledby="storageEliminado" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="storageEliminado">Registro de viajes eliminado!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Su registro de viajes ha sido eliminado
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="row align-items-center">
         <div class="alert alert-success text-justify" role="alert" id="resultados">

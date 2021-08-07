@@ -35,12 +35,12 @@ function main(event){
     let viajeUnitario = [viaje, resumen];
     arrayViajes.push(viajeUnitario);
     localStorage.setItem("viajes", JSON.stringify(arrayViajes));
-
+    
 }
 
 function mostrarViaje(){
     
-    var mostrar = JSON.parse(localStorage.getItem("viajes"));
+    let mostrar = JSON.parse(localStorage.getItem("viajes"));
     for (let index = 0; index < mostrar.length; index++) {
         let element = mostrar;
         let mensajeValido = document.createElement("div");
@@ -49,9 +49,8 @@ function mostrarViaje(){
     }       
  }
 
- function borrarLocalStorage(event){
-    event.preventDefault();
-    localStorage.clear();
+ function borrarLocalStorage(){
+    localStorage.clear();    
  }
 
 
@@ -63,6 +62,7 @@ verViajes.addEventListener("click", mostrarViaje);
 
 let borrarViajes = document.getElementById("borrarViajes");
 borrarViajes.addEventListener("click", borrarLocalStorage);
+
 
     
   
