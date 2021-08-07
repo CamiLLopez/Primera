@@ -35,7 +35,7 @@ function main(event){
     let viajeUnitario = [viaje, resumen];
     arrayViajes.push(viajeUnitario);
     localStorage.setItem("viajes", JSON.stringify(arrayViajes));
-
+    
 }
 
 function mostrarViaje(){
@@ -43,15 +43,10 @@ function mostrarViaje(){
     var mostrar = JSON.parse(localStorage.getItem("viajes"));
     for (let index = 0; index < mostrar.length; index++) {
         let element = mostrar;
-        let mensajeValido = document.createElement("div");
-        mensajeValido.innerHTML = `<p>${element[index][1]}</p>`;
+        let mensajeValido = document.createElement("p");
+        mensajeValido.innerHTML = `<h3 class="text-success text-justify">${element[index][1]}</h3>`;
         document.getElementById("resultados").appendChild(mensajeValido);
     }       
- }
-
- function borrarLocalStorage(event){
-    event.preventDefault();
-    localStorage.clear();
  }
 
 
@@ -60,9 +55,6 @@ boton.addEventListener("click", main);
 
 let verViajes = document.getElementById("consultarViajes");
 verViajes.addEventListener("click", mostrarViaje);
-
-let borrarViajes = document.getElementById("borrarViajes");
-borrarViajes.addEventListener("click", borrarLocalStorage);
 
     
   

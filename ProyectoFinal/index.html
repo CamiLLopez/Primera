@@ -1,73 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>ShareIt!</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="index.js" defer></script>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#page-top">ShareIt!</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
-                    </ul>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Share It! Compartí tus viajes!</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+        rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="#page-top">Empieza por aquí!</a></li>
+            <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+            <li class="sidebar-nav-item"><a href="#about">Sobre nosotros</a></li>
+            <li class="sidebar-nav-item"><a href="#services">Servicios</a></li>
+            <li class="sidebar-nav-item"><a href="#resultados" id="consultarViajes">Tus viajes</a></li>
+            <li class="sidebar-nav-item"><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">Share It!</h1>
+            <h3 class="mb-5"><em>Somos la pagina que te ayuda a planear tus roadtrips!</em></h3>
+            <a class="btn btn-light btn-xl" href="#about">Descubre mas!</a>
+        </div>
+    </header>
+
+    <section class="content-section bg-light" id="about">
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-6">
+                    <h2>Porque elegir ShareIt?</h2>
+                    <p class="lead mb-5">
+                        En esta pagina web usted podrá ingresar los gastos compartidos de un road trip
+                        y saber cuanto le corresponde pagar a cada pasajero!
+                    </p>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <div class=""><img class="img-fluid rounded-circle" src="assets/img/van01.jpg"
+                            alt="imagen de una van" /></div>
                 </div>
             </div>
-        </nav>
-        <!-- Header-->
-        <header class="masthead text-center text-white">
-            <div class="masthead-content">
-                <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">Comencemos un viaje compartido!</h1>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Mas informacion aquí!</a>
+        </div>
+    </section>
+    <section class="content-section bg-dark text-white text-center" id="services">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Servicios</h3>
+                <h2 class="mb-5">Comience a registrar sus viajes!</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-4 col-md-4 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
+                    <h4><strong>Empezar un viaje</strong></h4>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                    <h4><strong>Consulte sus viajes guardados</strong></h4>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                    <h4><strong>Termine con sus viajes almacenados</strong></h4>
                 </div>
             </div>
-            <div class="bg-circle-1 bg-circle"></div>
-            <div class="bg-circle-2 bg-circle"></div>
-            <div class="bg-circle-3 bg-circle"></div>
-            <div class="bg-circle-4 bg-circle"></div>
-        </header>
-        <!-- Content section 1-->
-        <section id="scroll">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/van01.jpg" alt="imagen de una van" /></div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">Porque elegir ShareIt?</h2>
-                            <p>En esta pagina web usted podrá ingresar los gastos compartidos de un road trip <br>y saber cuanto le corresponde pagar a cada pasajero!</p>
+        </div>
+    </section>
+
+    <section class="content-section bg-warning text-white">
+        <div class="container px-6 px-lg-5 text-left">
+            <h2 class="mb-4 text-center">Comienza la aventura y registra tu viaje con el siguiente formulario!</h2>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <form class="row row-form" id="formularioViajes">
+                                    <div class="col-sm-4 col-md-12 col-lg-12"></div>
+                                        <label class="form-label p-2">
+                                            A donde desea viajar?
+                                        </label>
+                                        <input class="form-control" type="text" id="lugar"
+                                            placeholder="Escriba su destino" required>
+                                    
+                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                                        <label class="form-label p-2">
+                                            Cuantos pasajeros serán?
+                                        </label>
+                                        <input class="form-control" type="number" id="pasajeros"
+                                        placeholder="Ingrese la cantidad de pasajeros" required>
+                                    
+                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                                        <label class="form-label p-2">
+                                            Cuantos gastaran en peajes?
+                                        </label>
+                                        <input class="form-control" type="number" id="peajes"
+                                        placeholder="Ingrese gastos de peaje" required>
+
+                                    
+                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                                        <label class="form-label p-2">
+                                            Cuantos gastaran en gasolina?
+                                        </label>
+                                        <input class="form-control" type="number" id="gasolina"
+                                        placeholder="Ingrese gastos de combustible" required>
+                                    
+                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                                    <label class="form-label p-2">
+                                        Algún gasto extra?
+                                    </label>
+                                    <input class="form-control" type="number" id="extra"
+                                    placeholder="Ingrese gastos extra" required>
+  
+                                <div class="p-3 col-lg-12"></div>
+                                    <input class="btn btn-xl btn-light col-3 p-2 m-1" type="submit" id="enviar" value="Añadir viaje!">
+                                    <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="reset" id="reset">
+                                    <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="button" id="borrarViajes" value="Borrar viajes">
+                            </form>
                         </div>
                     </div>
                 </div>
-            <div class="row align-items-center">
-                <div class="col-lg-12" id="resultados">
+            </div>
+    </section>
 
-                </div>
-            </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-black">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    <div class="row align-items-center">
+        <div class="alert alert-success text-justify" role="alert" id="resultados">
+
+        </div>
+    </div>
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i
+                            class="icon-social-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i
+                            class="icon-social-twitter"></i></a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; Your Website 2021</p>
+        </div>
+    </footer>
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>
