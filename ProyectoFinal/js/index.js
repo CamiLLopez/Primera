@@ -25,7 +25,6 @@ $( document ).ready(function() {
     }
 
     let arrayViajes = [];
-        
      
     if (localStorage.getItem('viajes')){
         arrayViajes = JSON.parse(localStorage.getItem('viajes'));
@@ -34,6 +33,15 @@ $( document ).ready(function() {
     function guardarViaje(viaje){
         localStorage.setItem("viajes", JSON.stringify(viaje));
     }
+
+    $('#formularioViajes').change(function (e) { 
+        e.preventDefault();
+        if($('.form-control').keyup()){ 
+            $('#enviar').attr('disabled', false);
+        } else {
+            $('#enviar').attr('disabled', true);
+        }  
+    });
 
     $('#formularioViajes').submit(function(event){
         event.preventDefault();
@@ -47,6 +55,9 @@ $( document ).ready(function() {
         let viajeUnitario = [viaje, resumen];
         arrayViajes.push(viajeUnitario);
         guardarViaje(arrayViajes);
+        $('#enviar').attr('disabled', true);
+        $('#formularioViajes')[0].reset();
+        
     })
 
   
@@ -64,14 +75,14 @@ $( document ).ready(function() {
     }
     
     function crearLista(element, id){
-        const lista = `<li id=${id}></li>`;
+        const lista = `<ul class="list-group list-group-flush" id=${id}></ul>`;
         $(element).append(lista);
     }
 
     function crearItemsLista(viajes, id){
         for (let index = 0; index < viajes.length; index++) {
             let element = viajes;
-            let mensajeValido = `<ul id=${id}>${element[index][1]}</ui>`;
+            let mensajeValido = `<li class="list-group-item list-group-item-action list-group-item-dark" id=${id}>${element[index][1]}</li>`;
             $('#resultados').append(mensajeValido);
         }
     }
