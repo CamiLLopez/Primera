@@ -34,14 +34,26 @@ $( document ).ready(function() {
         localStorage.setItem("viajes", JSON.stringify(viaje));
     }
 
-    $('#formularioViajes').change(function (e) { 
+    $('#extra').change(function (e) { 
         e.preventDefault();
-        if($('.form-control').keyup()){ 
+        let resultadoContador = comprobarCampos();
+        if(resultadoContador>=5){
             $('#enviar').attr('disabled', false);
-        } else {
+        }else{
             $('#enviar').attr('disabled', true);
-        }  
+        }
     });
+
+    function comprobarCampos(){
+        let contador=0; 
+        $('#formularioViajes').find(':input').each(function() {
+        var controlar = $('input').val();
+        if (controlar.length>1){
+            contador +=1;
+        }
+    });
+    return contador;
+}
 
     $('#formularioViajes').submit(function(event){
         event.preventDefault();
