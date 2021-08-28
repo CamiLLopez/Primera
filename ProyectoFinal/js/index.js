@@ -52,7 +52,6 @@ $( document ).ready(function() {
 
     $('#formularioViajes').submit(function(event){
         event.preventDefault();
-       
         let lugar = $('#lugar').val();  
         let pasajeros = parseInt($('#pasajeros').val());
         let gasolina = parseInt($('#gasolina').val());

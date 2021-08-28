@@ -9,7 +9,7 @@
     <title>Share It! Compartí tus viajes!</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    
+
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
         rel="stylesheet" />
@@ -64,12 +64,13 @@
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-4 col-md-4 mb-5 mb-lg-0">
                     <a href="#formularioViajes">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                    <h4><strong>Empezar un viaje</strong></h4>
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i
+                                class="icon-screen-smartphone"></i></span>
+                        <h4><strong>Empezar un viaje</strong></h4>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 mb-5 mb-lg-0">
-                <a href="./pages/viajes.html">
+                    <a href="./pages/viajes.html">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
                         <h4><strong>Consulte sus viajes guardados</strong></h4>
                     </a>
@@ -87,91 +88,93 @@
     <section class="content-section bg-warning text-white">
         <div class="container px-6 px-lg-5 text-left">
             <h2 class="mb-4 text-center">Comienza la aventura y registra tu viaje con el siguiente formulario!</h2>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <form class="row row-form" id="formularioViajes">
-                                    <div class="col-sm-4 col-md-12 col-lg-12"></div>
-                                        <label class="form-label p-2">
-                                            A donde desea viajar?
-                                        </label>
-                                        <input class="form-control" type="text" id="lugar"
-                                            placeholder="Escriba su destino" required>
-                                    
-                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
-                                        <label class="form-label p-2">
-                                            Cuantos pasajeros serán?
-                                        </label>
-                                        <input class="form-control" type="number" id="pasajeros"
-                                        placeholder="Ingrese la cantidad de pasajeros" required>
-                                    
-                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
-                                        <label class="form-label p-2">
-                                            Coste de peajes
-                                        </label>
-                                        <input class="form-control" type="number" id="peajes"
-                                        placeholder="Ingrese gastos de peaje" required>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <form class="row row-form" id="formularioViajes">
+                            <div class="col-sm-4 col-md-12 col-lg-12"></div>
+                            <label class="form-label p-2">
+                                A donde desea viajar?
+                            </label>
+                            <input class="form-control" type="text" id="lugar" placeholder="Escriba su destino"
+                                required>
 
-                                    
-                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
-                                        <label class="form-label p-2">
-                                            Coste de gasolina
-                                        </label>
-                                        <input class="form-control" type="number" id="gasolina"
-                                        placeholder="Ingrese gastos de combustible" required>
-                                    
-                                    <div class="col-sm-4 col-md-12 col-lg-12 "></div>
-                                    <label class="form-label p-2">
-                                        Algún gasto extra?
-                                    </label>
-                                    <input class="form-control" type="number" id="extra"
-                                    placeholder="Ingrese gastos extra" required>
-  
-                                <div class="p-3 col-lg-12"></div>
-                                    <input class="btn btn-xl btn-light col-3 p-2 m-1" type="submit" id="enviar" value="Añadir viaje!" data-bs-toggle="modal" data-bs-target="#envioModal" disabled>
-                                    <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="reset" id="restablecer">
-                                    <button class="btn btn-xl btn-dark col-3 p-2 m-1" id="borrarViajes" data-bs-toggle="modal" data-bs-target="#eliminarViajes">Eliminar todos los viajes</button>
-                            </form>
-                        </div>
+                            <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                            <label class="form-label p-2">
+                                Cuantos pasajeros serán?
+                            </label>
+                            <input class="form-control" type="number" id="pasajeros"
+                                placeholder="Ingrese la cantidad de pasajeros" required>
+
+                            <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                            <label class="form-label p-2">
+                                Coste de peajes
+                            </label>
+                            <input class="form-control" type="number" id="peajes" placeholder="Ingrese gastos de peaje"
+                                required>
+
+
+                            <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                            <label class="form-label p-2">
+                                Coste de gasolina
+                            </label>
+                            <input class="form-control" type="number" id="gasolina"
+                                placeholder="Ingrese gastos de combustible" required>
+
+                            <div class="col-sm-4 col-md-12 col-lg-12 "></div>
+                            <label class="form-label p-2">
+                                Algún gasto extra?
+                            </label>
+                            <input class="form-control" type="number" id="extra" placeholder="Ingrese gastos extra"
+                                required>
+
+                            <div class="p-3 col-lg-12"></div>
+                            <input class="btn btn-xl btn-light col-3 p-2 m-1" type="submit" id="enviar"
+                                value="Añadir viaje!" data-bs-toggle="modal" data-bs-target="#envioModal" disabled>
+                            <input class="btn btn-xl btn-dark col-3 p-2 m-1" type="reset" id="restablecer">
+                            <button class="btn btn-xl btn-dark col-3 p-2 m-1" id="borrarViajes" data-bs-toggle="modal"
+                                data-bs-target="#eliminarViajes">Eliminar todos los viajes</button>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-  
+
     <div class="modal fade" id="envioModal" tabindex="-1" aria-labelledby="formEnviado" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="formEnviado">Viaje guardado!</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="formEnviado">Viaje guardado!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  Su viaje se ha guardado con exito!
+                    Su viaje se ha guardado con exito!
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
-  <div class="modal fade" id="eliminarViajes" tabindex="-1" aria-labelledby="storageEliminado" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="storageEliminado">Registro de viajes eliminado!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="eliminarViajes" tabindex="-1" aria-labelledby="storageEliminado" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="storageEliminado">Registro de viajes eliminado!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Su registro de viajes ha sido eliminado
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          Su registro de viajes ha sido eliminado
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-   
+
 
     <footer class="footer text-center">
         <div class="container px-4 px-lg-5">
@@ -190,9 +193,14 @@
 
     </footer>
     <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
+    </script>
     <script src="js/index.js"></script>
     <script src="js/scripts.js"></script>
 </body>

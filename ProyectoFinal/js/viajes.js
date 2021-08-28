@@ -53,18 +53,20 @@ $(document).ready(function(){
     function crearItemsLista(viajes){
         for (let index = 0; index < viajes.length; index++) {
             let element = viajes;
-            
             let mensajeValido = `<li class="list-group-item list-group-item-action list-group-item-dark" id=${index}>${element[index][1]}
                                 <button class='btn btn-dark btn-m m-3' id="btn${index}" >Borrar viaje</button>
                                 <button class="btn btn-dark btn-m m-3" id="verHoteles${index}">Ver Hoteles!</button>
                                 </li>`;
+        
             $('#resultados').append(mensajeValido);
              $(`#btn${index}`).click(function(e){
                 e.preventDefault();
                 removerViaje(index);
                 $('#consultarViajes').click();
+                
                 })
                 $(`#verHoteles${index}`).click(function(){
+                    $(`#verHoteles${index}`).fadeIn("slow");
                     $("#hotelesResultado").empty();
                     consultarHoteles(index);
                     
@@ -77,18 +79,23 @@ $(document).ready(function(){
         localStorage.removeItem('viajes');
         viajesLocal = JSON.stringify(viajesLocal);
         localStorage.setItem('viajes', viajesLocal);
+        $("#hotelesResultado").fadeOut(2000, function(){
+            $('#hotelesResultado').empty();
+        });
     }
  
    
     $('#consultarViajes').click(function(){
-        if(JSON.parse(localStorage.getItem('viajes')).length<1){
-            const mensaje = `<p list-group-item list-group-item-action list-group-item-dark>No hay viajes guardados por aqui!</p>`;
+        if(!JSON.parse(localStorage.getItem('viajes')) || JSON.parse(localStorage.getItem('viajes')).length<1 ){
+            const mensaje = `<strong><p class="list-group-item list-group-item-action list-group-item-dark">No hay viajes guardados por aqui!</p><strong>`;
             $('#resultados').append(mensaje);
+            $("#resultados").fadeOut(5000, function(){
+                $('#resultados').empty();
+            }); 
         }else{
             $('#resultados').empty();
             crearLista('body', 'listaViajes');
             crearItemsLista(obtenerViajesStorage('viajes'));
-            
         }   
     })
 
