@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
     class Viaje{
         constructor (destino,pasajeros, gasolina, peajes, extra=0){
             this.destino = destino;
@@ -57,6 +56,7 @@ $( document ).ready(function() {
 
     $('#formularioViajes').submit(function(event){
         event.preventDefault();
+       
         let lugar = $('#lugar').val();  
         let pasajeros = parseInt($('#pasajeros').val());
         let gasolina = parseInt($('#gasolina').val());
@@ -69,7 +69,34 @@ $( document ).ready(function() {
         guardarViaje(arrayViajes);
         $('#enviar').attr('disabled', true);
         $('#formularioViajes')[0].reset();
+
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `https://hotels4.p.rapidapi.com/locations/search?query=${viaje.destino}&locale=en_US`,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "hotels4.p.rapidapi.com",
+                "x-rapidapi-key": "3e515ffa67mshd759b56c4fea8d2p1215a3jsnb55607932fff"
+            }
+        };
         
+        $.ajax(settings).done(function (response) {
+            let misDatos = response;
+
+            for (const dato of misDatos.suggestions) {
+                if(dato.group =="HOTEL_GROUP"){
+                    for (const entidad of dato.entities){
+                        entidad.name
+                        $("body").prepend(`<div><h3>${entidad.name}</h3>
+                        <p> ${entidad.caption}</p>
+                        </div>`)
+
+                    }
+                   
+               }
+            }
+    });          
     })
 
   
