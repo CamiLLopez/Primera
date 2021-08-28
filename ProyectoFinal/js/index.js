@@ -25,10 +25,6 @@ $( document ).ready(function() {
 
     let arrayViajes = [];
      
-    if (localStorage.getItem('viajes')){
-        arrayViajes = JSON.parse(localStorage.getItem('viajes'));
-    }
-    
     function guardarViaje(viaje){
         localStorage.setItem("viajes", JSON.stringify(viaje));
     }
@@ -68,79 +64,18 @@ $( document ).ready(function() {
         arrayViajes.push(viajeUnitario);
         guardarViaje(arrayViajes);
         $('#enviar').attr('disabled', true);
-        $('#formularioViajes')[0].reset();
-
-        const settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": `https://hotels4.p.rapidapi.com/locations/search?query=${viaje.destino}&locale=en_US`,
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "hotels4.p.rapidapi.com",
-                "x-rapidapi-key": "3e515ffa67mshd759b56c4fea8d2p1215a3jsnb55607932fff"
-            }
-        };
-        
-        $.ajax(settings).done(function (response) {
-            let misDatos = response;
-
-            for (const dato of misDatos.suggestions) {
-                if(dato.group =="HOTEL_GROUP"){
-                    for (const entidad of dato.entities){
-                        entidad.name
-                        $("body").prepend(`<div><h3>${entidad.name}</h3>
-                        <p> ${entidad.caption}</p>
-                        </div>`)
-
-                    }
-                   
-               }
-            }
-    });          
+        $('#formularioViajes')[0].reset();        
     })
-
-  
-    function obtenerViajesStorage(key) {
-        if(localStorage.getItem(key)){
-          return JSON.parse(localStorage.getItem(key));
-        }
-      }
-    
-    if(!localStorage.getItem('viajes')){
-        crearLista('body', 'listaViajes');
-    }else{
-        crearLista('body', 'listaViajes');
-        crearItemsLista(obtenerViajesStorage('viajes'), '#listaItem');
-    }
-    
-    function crearLista(element, id){
-        const lista = `<ul class="list-group list-group-flush" id=${id}></ul>`;
-        $(element).append(lista);
-    }
-
-    function crearItemsLista(viajes, id){
-        for (let index = 0; index < viajes.length; index++) {
-            let element = viajes;
-            let mensajeValido = `<li class="list-group-item list-group-item-action list-group-item-dark" id=${id}>${element[index][1]}</li>`;
-            $('#resultados').append(mensajeValido);
-        }
-    }
 
     function borrarLista(id){
         $(id).empty();
     }
-
     $('#borrarViajes').click(function(){
         window.localStorage.clear();
         borrarLista('#resultados');
     })
-    $('#consultarViajes').click(function(){
-        if(localStorage.getItem('viajes')){
-            crearLista('body', 'listaViajes');
-            crearItemsLista(obtenerViajesStorage('viajes'), '#listaItem');
-        }      
-    })
 
+    
 
 });
 
