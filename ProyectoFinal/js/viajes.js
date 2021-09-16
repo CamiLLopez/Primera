@@ -62,6 +62,9 @@ $(document).ready(function(){
              $(`#btn${index}`).click(function(e){
                 e.preventDefault();
                 removerViaje(index);
+                $("#resultados").fadeOut(1000, function(){
+                    $('#resultados').empty();
+                });
                 $('#consultarViajes').click();
                 
                 })
@@ -83,20 +86,27 @@ $(document).ready(function(){
             $('#hotelesResultado').empty();
         });
     }
- 
+ checkIfValuesOnLocalStorage = (storage)=> {
+     
+    return !JSON.parse(storage) || JSON.parse(storage).length<1 || storage =='[]'
+    
+ }
    
     $('#consultarViajes').click(function(){
-        if(!JSON.parse(localStorage.getItem('viajes')) || JSON.parse(localStorage.getItem('viajes')).length<1 ){
-            const mensaje = `<strong><p class="list-group-item list-group-item-action list-group-item-dark">No hay viajes guardados por aqui!</p><strong>`;
-            $('#resultados').append(mensaje);
-            $("#resultados").fadeOut(5000, function(){
-                $('#resultados').empty();
-            }); 
+    
+    if ($('#resultados').children().length<=0){
+
+        if(checkIfValuesOnLocalStorage(localStorage.getItem('viajes')) ){
+            let mensaje = `<strong><p class="list-group-item list-group-item-action list-group-item-dark">No hay viajes guardados por aqui!</p><strong>`;
+            $('#resultados').append(mensaje); 
         }else{
             $('#resultados').empty();
             crearLista('body', 'listaViajes');
             crearItemsLista(obtenerViajesStorage('viajes'));
-        }   
+        } 
+        
+    }
+         
     })
 
 
